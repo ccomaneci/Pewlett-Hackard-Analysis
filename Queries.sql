@@ -201,3 +201,33 @@ INNER JOIN dept_emp AS de
 ON (ce.emp_no = de.emp_no)
 INNER JOIN departments AS d
 ON (de.dept_no = d.dept_no);
+
+
+-- skill drill 7.3.6
+SELECT e.emp_no,
+    e.first_name,
+e.last_name,
+de.dept_no,
+d.dept_name
+INTO sales
+FROM employees as e
+INNER JOIN dept_emp as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN departments as d
+ON (d.dept_no = de.dept_no)
+where d.dept_no = 'd007'
+
+-- skill drill 7.3.6
+SELECT e.emp_no,
+    e.first_name,
+e.last_name,
+de.dept_no,
+d.dept_name
+INTO sales_&_development
+FROM employees as e
+INNER JOIN dept_emp as de
+ON (e.emp_no = de.emp_no)
+INNER JOIN departments as d
+ON (d.dept_no = de.dept_no)
+where d.dept_no = 'd007'
+or d.dept_no = 'd005'
